@@ -1,0 +1,43 @@
+{
+  "name": "cascader-tree-select",
+  "main": "lib/cascader-tree-select.umd.js",
+  "module": "lib/cascader-tree-select.es.js",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.13",
+    "vue": "^2.7.0",
+    "vue-template-compiler": "^2.7.0",
+    "vue-virtual-scroller": "^1.1.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.2.0",
+    "@vue/test-utils": "^1.3.0",
+    "happy-dom": "^9.20.3",
+    "js-shortid": "^0.1.1",
+    "less": "^4.2.0",
+    "lodash.debounce": "^4.0.8",
+    "vite": "^4.3.9",
+    "vitest": "^0.34.1",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "mockjs": "^1.1.0"
+  },
+  "description": "> 基于`element-ui`和`vue-virtual-scroller`的全量级联树选择器，结合虚拟列表逐级渲染，在较大数据量上也有较高的性能，主要包含:",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cascader",
+    "vue",
+    "element",
+    "virtual-scroller"
+  ]
+}
