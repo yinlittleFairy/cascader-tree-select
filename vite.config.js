@@ -9,6 +9,7 @@ export default ({ mode }) => {
 
   let basic = {
     plugins: [vue(), VueSetupExtend()],
+    optimizeDeps: ['lodash', 'element-ui'],
     test: {
       environment: 'happy-dom'
     },
