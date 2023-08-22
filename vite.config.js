@@ -21,7 +21,8 @@ export default ({ mode }) => {
     },
     build: {
       commonjsOptions: {
-        include: [/node_modules/]
+        include: [/node_modules/],
+        transformMixedEsModules: true
       }
     }
   }
