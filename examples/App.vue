@@ -13,8 +13,8 @@
       ></cascader-tree-select>
     </div>
     <div class="cascader-tree-select__demo__module">
-      <div style="margin-bottom: 20px">change事件返回数据逻辑是如果当前节点下的所有子节点全部选中，则返回当前节点的路径；如果未全部选中，则返回选中的子节点的路径，以此类推</div>
-      <div>你将通过change事件得到的数据是：<span style="color: red">{{ resultValue }}</span></div>
+      <div class="result-tips">注：change事件返回数据逻辑是如果当前节点下的所有子节点全部选中，则返回当前节点的路径；如果未全部选中，则返回选中的子节点的路径，以此类推</div>
+      <div class="result-tips">你将通过change事件得到的数据是：<span style="color: red">{{ resultValue }}</span></div>
     </div>
     </div>
 </template>
@@ -70,6 +70,11 @@ const handleChange = (result) => {
     border-radius: 12px;
     margin-bottom: 16px;
     background: #fff;
+    .result-tips {
+      color: #393C5A;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
   }
 }
 </style>

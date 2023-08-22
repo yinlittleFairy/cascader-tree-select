@@ -24,7 +24,7 @@
     <div class="cascader-panel__menu">
       <div v-if="isResultPanel && showResultCount" class="cascader-panel__menu__operate">
         <span>已添加({{ panelOptions.length }}条)</span>
-        <el-button type="text" :disabled="!panelStatus.checked && !panelStatus.indeterminate" @click="emit('removeSelectedCate')">移除</el-button>
+        <span class="remove-button" :class="{ 'remove-button__disabled': !panelStatus.checked && !panelStatus.indeterminate }" @click="emit('removeSelectedCate')">移除</span>
       </div>
       <div v-if="!!panelShowOptions.length">
         <recycle-scroller
