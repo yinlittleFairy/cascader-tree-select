@@ -1,5 +1,5 @@
 <template>
-  <div class="cascader-tree-select__demo">
+  <div id="app" class="cascader-tree-select__demo">
     <prop-form v-model="propModel" />
     <div class="cascader-tree-select__demo__module">
       <cascader-tree-select

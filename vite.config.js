@@ -32,12 +32,12 @@ export default ({ mode }) => {
     }
   }
   const docsBuild = {
-    outDir: 'docs',
-    lib: {
-      entry: resolve(__dirname, "index.html"),
-      name: 'cascaderTreeExamples',
-      fileName: (format) => `cascader-tree-examples.${format}.js`
-    }
+    outDir: 'docs'
+    // lib: {
+    //   entry: resolve(__dirname, "index.html"),
+    //   name: 'cascaderTreeExamples',
+    //   fileName: (format) => `cascader-tree-examples.${format}.js`
+    // }
   }
   basic = isLib ? { ...basic, build: { ...libBuild, ...basic.build } } : { ...basic, build: { ...docsBuild, ...basic.build } }
   return defineConfig(basic)

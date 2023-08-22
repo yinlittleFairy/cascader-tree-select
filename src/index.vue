@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="cascader-tree-select">
+  <div class="cascader-tree-select">
     <div class="cascader-tree-select__search" v-if="needSearch">
       <el-input
         v-model.trim="searchKey"
