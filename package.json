@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/cascader-tree-select",
     "lib": "vite build --mode lib",
     "preview": "vite preview",
     "test": "vitest"
