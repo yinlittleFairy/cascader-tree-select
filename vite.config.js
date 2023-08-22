@@ -19,7 +19,7 @@ export default ({ mode }) => {
     },
     build: {
       rollupOptions: {
-        external: ['vue', 'element-ui']
+        external: ['element-ui']
       }
     }
   }

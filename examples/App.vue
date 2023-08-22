@@ -58,7 +58,6 @@ const resultValue = ref([])
 
 const handleChange = (result) => {
   resultValue.value = result
-  console.log(result)
 }
 </script>
 
