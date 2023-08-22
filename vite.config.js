@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue2'
+import commonjs from '@rollup/plugin-commonjs'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 // https://vitejs.dev/config/
 
@@ -8,8 +9,10 @@ export default ({ mode }) => {
   const isLib = mode === 'lib'
 
   let basic = {
-    plugins: [vue(), VueSetupExtend()],
-    optimizeDeps: ['lodash', 'element-ui'],
+    plugins: [commonjs(), vue(), VueSetupExtend()],
+    optimizeDeps: {
+      include: ['vue', 'lodash', 'element-ui', 'mockjs', 'vue-virtual-scroller']
+    },
     test: {
       environment: 'happy-dom'
     },
@@ -19,6 +22,9 @@ export default ({ mode }) => {
       }
     },
     build: {
+      commonjsOptions: {
+        include: ['vue', 'lodash', 'element-ui', 'mockjs', 'vue-virtual-scroller']
+      },
       rollupOptions: {
         external: ['element-ui']
       }

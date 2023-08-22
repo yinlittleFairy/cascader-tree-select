@@ -23,6 +23,7 @@
 import CascaderTreeSelect from '../src/index.vue'
 import PropForm from './prop-form.vue'
 import Mock from 'mockjs'
+import 'element-ui/lib/theme-chalk/index.css'
 import { reactive, ref } from 'vue'
 
 const _mock = Mock.mock({

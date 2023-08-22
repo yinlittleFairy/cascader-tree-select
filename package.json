@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@rollup/plugin-commonjs": "^25.0.4",
     "element-ui": "^2.15.13",
     "vue": "^2.7.0",
     "vue-template-compiler": "^2.7.0",
