@@ -6,6 +6,7 @@ import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 // https://vitejs.dev/config/
 
 export default ({ mode }) => {
+  console.log(mode, 'mode')
   const isLib = mode === 'lib'
 
   let basic = {
@@ -21,9 +22,6 @@ export default ({ mode }) => {
     build: {
       commonjsOptions: {
         include: [/node_modules/]
-      },
-      rollupOptions: {
-        external: ['element-ui']
       }
     }
   }
