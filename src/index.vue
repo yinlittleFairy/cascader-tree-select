@@ -32,7 +32,7 @@ import './style.less'
 import '@/plugins/element-ui'
 import CascaderSelect from '@/components/cascader-select.vue'
 import CascaderResult from '@/components/cascader-result.vue'
-import { onMounted, onUnmounted, ref, watch, nextTick } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useStore } from './composable/use-store.js'
 import { useSearch } from './composable/use-search.js'
 
