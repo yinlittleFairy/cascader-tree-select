@@ -1,4 +1,4 @@
-import { build, defineConfig } from 'vite'
+import { defineConfig } from 'vite'
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue2'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
@@ -33,13 +33,8 @@ export default ({ mode }) => {
   }
   const docsBuild = {
     outDir: 'docs'
-    // lib: {
-    //   entry: resolve(__dirname, "index.html"),
-    //   name: 'cascaderTreeExamples',
-    //   fileName: (format) => `cascader-tree-examples.${format}.js`
-    // }
   }
-  basic = isLib ? { ...basic, build: { ...libBuild, ...basic.build } } : { ...basic, build: { ...docsBuild, ...basic.build } }
+  basic = { ...basic, build: isLib ? { ...libBuild, ...basic.build } : { ...docsBuild, ...basic.build } }
   return defineConfig(basic)
 
 }
