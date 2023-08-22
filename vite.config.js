@@ -10,9 +10,6 @@ export default ({ mode }) => {
 
   let basic = {
     plugins: [commonjs(), vue(), VueSetupExtend()],
-    optimizeDeps: {
-      include: ['vue', 'lodash', 'element-ui', 'mockjs', 'vue-virtual-scroller']
-    },
     test: {
       environment: 'happy-dom'
     },
@@ -23,7 +20,7 @@ export default ({ mode }) => {
     },
     build: {
       commonjsOptions: {
-        include: ['vue', 'lodash', 'element-ui', 'mockjs', 'vue-virtual-scroller']
+        include: [/node_modules/]
       },
       rollupOptions: {
         external: ['element-ui']
