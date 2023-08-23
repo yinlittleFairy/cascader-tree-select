@@ -9,7 +9,7 @@ export default ({ mode }) => {
   const isLib = mode === 'lib'
 
   let basic = {
-    plugins: [commonjs(), vue(), VueSetupExtend()],
+    plugins: [vue(), VueSetupExtend()],
     test: {
       environment: 'happy-dom'
     },
@@ -19,11 +19,11 @@ export default ({ mode }) => {
       }
     },
     build: {
+      base: '/cascader-tree-select',
       chunkSizeWarningLimit: 2000,
-      commonjsOptions: {
-        include: [/node_modules/],
-        transformMixedEsModules: true
-      },
+      // commonjsOptions: {
+      //   include: [/node_modules/, /lib/]
+      // },
       /** 打包后静态资源目录 */
       assetsDir: 'static'
     }

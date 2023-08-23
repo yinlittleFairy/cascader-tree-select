@@ -1,0 +1,1 @@
+{"version":3,"file":"HTMLLinkElementUtility.d.ts","sourceRoot":"","sources":["../../../src/nodes/html-link-element/HTMLLinkElementUtility.ts"],"names":[],"mappings":"AAIA,OAAO,eAAe,MAAM,mBAAmB,CAAC;AAKhD;;GAEG;AACH,MAAM,CAAC,OAAO,OAAO,sBAAsB;IAC1C;;;;;;OAMG;WACiB,sBAAsB,CAAC,OAAO,EAAE,eAAe,GAAG,OAAO,CAAC,IAAI,CAAC;IAkCnF;;;;;OAKG;IACH,OAAO,CAAC,MAAM,CAAC,OAAO;CAqBtB"}
