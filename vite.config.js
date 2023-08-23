@@ -26,9 +26,6 @@ export default ({ mode }) => {
       },
       /** 打包后静态资源目录 */
       assetsDir: 'static'
-    },
-    optimizeDeps: {
-      exclude: ['element-ui', 'vue']
     }
   }
   const libBuild = {

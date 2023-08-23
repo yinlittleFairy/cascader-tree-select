@@ -33,6 +33,7 @@
   },
   "description": "> 基于`element-ui`和`vue-virtual-scroller`的全量级联树选择器，结合虚拟列表逐级渲染，支持全选，在较大数据量上也有较高的性能",
   "directories": {
+    "doc": "docs",
     "example": "examples",
     "lib": "lib"
   },
@@ -42,5 +43,14 @@
     "vue",
     "element",
     "virtual-scroller"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yinLittleFairy/cascader-tree-select.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/yinLittleFairy/cascader-tree-select/issues"
+  },
+  "homepage": "https://github.com/yinLittleFairy/cascader-tree-select#readme"
 }
