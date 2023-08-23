@@ -4,7 +4,6 @@ import debounce from 'lodash.debounce'
 export const useStore = ({
   options = [],
   cascaderMaxLevel = 2,
-  value = [],
   needResultPanel = true,
   resultLabelJoiner = ' > '
 }, emit) => {
@@ -12,7 +11,7 @@ export const useStore = ({
   const resultStore = ref(null)
   const formatOptions = ref(null)
 
-  const initMenuStore = () => {
+  const initMenuStore = (value = []) => {
     let _edit = []
     if (value.length) _edit = value?.map(it => it.join(','))
     menuStore.value = new MenuStore(options, _edit, cascaderMaxLevel)
@@ -29,7 +28,7 @@ export const useStore = ({
         initResultStore(result)
       })
       menuStore.value.listenChange(emitsEnum.resultChange, debouncedListenResFun)
-      if (_edit && _edit.length) initResultStore(menuStore.value.result)
+      initResultStore(menuStore.value.result)
     }
     formatOptions.value = menuStore.value.getNodesTree()
   }

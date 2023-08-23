@@ -93,11 +93,13 @@ watch(() => searchKey.value, () => {
 })
 
 onMounted(() => {
-  initMenuStore()
+  initMenuStore(props.value)
 })
 
 onUnmounted(() => {
   handleDestroyed()
 })
+
+defineExpose({ initMenuStore })
 
 </script>

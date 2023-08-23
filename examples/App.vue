@@ -10,6 +10,7 @@
         :needResultPanel="propModel.needResultPanel"
         :ancestorHitShow="propModel.ancestorHitShow"
         @change="handleChange"
+        ref="cascaderTreeSelectRef"
       ></cascader-tree-select>
     </div>
     <div class="cascader-tree-select__demo__module">
@@ -24,7 +25,14 @@ import CascaderTreeSelect from '../src/index.vue'
 import PropForm from './prop-form.vue'
 import Mock from 'mockjs'
 import 'element-ui/lib/theme-chalk/index.css'
-import { reactive, ref } from 'vue'
+import { reactive, ref, watch } from 'vue'
+
+const cascaderTreeSelectRef = ref(null)
+const propModel = reactive({
+  needSearch: true,
+  needResultPanel: true,
+  ancestorHitShow: true
+})
 
 const _mock = Mock.mock({
   'array|100': [
@@ -38,7 +46,7 @@ const _mock = Mock.mock({
           'children|10': [
             {
               label: '@csentence(6)',
-              value: '@increment()',
+              value: '@increment()'
             }
           ]
         }
@@ -47,18 +55,15 @@ const _mock = Mock.mock({
   ]
 })
 
-const propModel = reactive({
-  needSearch: true,
-  needResultPanel: true,
-  ancestorHitShow: true,
-  cascaderMaxLevel: 2,
-})
-
 const resultValue = ref([])
 
 const handleChange = (result) => {
   resultValue.value = result
 }
+
+watch(() => propModel, () => {
+  cascaderTreeSelectRef.value?.initMenuStore([])
+}, { deep: true })
 </script>
 
 <style lang="less" scoped>

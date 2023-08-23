@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue2'
-import commonjs from '@rollup/plugin-commonjs'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 // https://vitejs.dev/config/
 
@@ -19,11 +18,7 @@ export default ({ mode }) => {
       }
     },
     build: {
-      base: '/cascader-tree-select',
       chunkSizeWarningLimit: 2000,
-      // commonjsOptions: {
-      //   include: [/node_modules/, /lib/]
-      // },
       /** 打包后静态资源目录 */
       assetsDir: 'static'
     }
