@@ -31,7 +31,7 @@
     "mockjs": "^1.1.0",
     "terser": "5.19.2"
   },
-  "description": "> 基于`element-ui`和`vue-virtual-scroller`的全量级联树选择器，结合虚拟列表逐级渲染，在较大数据量上也有较高的性能，主要包含:",
+  "description": "> 基于`element-ui`和`vue-virtual-scroller`的全量级联树选择器，结合虚拟列表逐级渲染，支持全选，在较大数据量上也有较高的性能",
   "directories": {
     "example": "examples",
     "lib": "lib"

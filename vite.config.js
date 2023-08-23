@@ -24,21 +24,11 @@ export default ({ mode }) => {
         include: [/node_modules/],
         transformMixedEsModules: true
       },
-      /** Vite 2.6.x 以上需要配置 minify: "terser", terserOptions 才能生效 */
-      minify: "terser",
-      terserOptions: {
-        compress: {
-          drop_console: false,
-          drop_debugger: true,
-          pure_funcs: ["console.log"]
-        },
-        format: {
-          /** 删除注释 */
-          comments: false
-        }
-      },
       /** 打包后静态资源目录 */
       assetsDir: 'static'
+    },
+    optimizeDeps: {
+      exclude: ['element-ui', 'vue']
     }
   }
   const libBuild = {
