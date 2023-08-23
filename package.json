@@ -28,7 +28,8 @@
     "vite": "^4.3.9",
     "vitest": "^0.34.1",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "mockjs": "^1.1.0"
+    "mockjs": "^1.1.0",
+    "terser": "5.19.2"
   },
   "description": "> 基于`element-ui`和`vue-virtual-scroller`的全量级联树选择器，结合虚拟列表逐级渲染，在较大数据量上也有较高的性能，主要包含:",
   "directories": {
