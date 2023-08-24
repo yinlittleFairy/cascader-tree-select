@@ -11,7 +11,7 @@
     </div>
     <div class="cascader-tree-select__main">
       <cascader-select
-        :options="menuStore.value.nodesTree"
+        :options="menuStore ? menuStore.getNodesTree() : []"
         :cascader-max-level="props.cascaderMaxLevel"
         :global-search-word="searchKey"
         :panel-title-list="props.panelTitleList"
@@ -89,7 +89,7 @@ const { menuStore, initMenuStore, resultStore, handleDestroyed, removeSelectedCa
 const { handleSearch } = useSearch(cascaderSelectRef)
 
 watch(() => searchKey.value, () => {
-  handleSearch(menuStore.value.nodesTree, searchKey.value, props.ancestorHitShow)
+  handleSearch( menuStore.getNodesTree(), searchKey.value, props.ancestorHitShow)
 })
 
 watch(() => props.options, (val) => {
