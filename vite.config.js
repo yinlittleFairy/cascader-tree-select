@@ -18,31 +18,28 @@ export default ({ mode }) => {
       }
     },
     build: {
-      chunkSizeWarningLimit: 2000,
-      rollupOptions: {
-        external: ["vue", "element-ui"], // 指定外部依赖
-        output: {
-          // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-          globals: {
-            vue: "Vue",
-            "element-ui": "elementUi",
-          },
-        },
-      }
+      outDir: isLib ? 'lib' : 'docs',
+      chunkSizeWarningLimit: 2000
     }
   }
   const libBuild = {
-    outDir: 'lib',
     lib: {
       entry: resolve(__dirname, "src/index.js"),
       name: 'cascaderTreeSelect',
       fileName: (format) => `cascader-tree-select.${format}.js`
+    },
+    rollupOptions: {
+      external: ["vue", "element-ui"], // 指定外部依赖
+      output: {
+        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+        globals: {
+          vue: "Vue",
+          "element-ui": "elementUi",
+        },
+      },
     }
   }
-  const docsBuild = {
-    outDir: 'docs'
-  }
-  basic = { ...basic, build: isLib ? { ...libBuild, ...basic.build } : { ...docsBuild, ...basic.build } }
+  basic = { ...basic, build: isLib ? { ...libBuild, ...basic.build } : { ...basic.build } }
   return defineConfig(basic)
 
 }
