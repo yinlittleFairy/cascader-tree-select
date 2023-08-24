@@ -11,7 +11,7 @@
     </div>
     <div class="cascader-tree-select__main">
       <cascader-select
-        :options="formatOptions"
+        :options="menuStore.value.nodesTree"
         :cascader-max-level="props.cascaderMaxLevel"
         :global-search-word="searchKey"
         :panel-title-list="props.panelTitleList"
@@ -32,7 +32,7 @@ import './style.less'
 import '@/plugins/element-ui'
 import CascaderSelect from '@/components/cascader-select.vue'
 import CascaderResult from '@/components/cascader-result.vue'
-import { onMounted, onUnmounted, ref, watch } from 'vue'
+import { onUnmounted, ref, watch } from 'vue'
 import { useStore } from './composable/use-store.js'
 import { useSearch } from './composable/use-search.js'
 
@@ -79,22 +79,22 @@ const props = defineProps({
   }
 })
 
-const searchKey = ref('')
+let searchKey = ref('')
 const cascaderSelectRef = ref(null)
 
 const emit = defineEmits(['change'])
 
-const { initMenuStore, formatOptions, resultStore, handleDestroyed, removeSelectedCate } = useStore(props, emit)
+const { menuStore, initMenuStore, resultStore, handleDestroyed, removeSelectedCate } = useStore(props, emit)
 
 const { handleSearch } = useSearch(cascaderSelectRef)
 
 watch(() => searchKey.value, () => {
-  handleSearch(formatOptions.value, searchKey.value, props.ancestorHitShow)
+  handleSearch(menuStore.value.nodesTree, searchKey.value, props.ancestorHitShow)
 })
 
-onMounted(() => {
-  initMenuStore(props.value)
-})
+watch(() => props.options, (val) => {
+  initMenuStore(props.value, val)
+}, { immediate: true, deep: true })
 
 onUnmounted(() => {
   handleDestroyed()

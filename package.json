@@ -25,11 +25,11 @@
     "js-shortid": "^0.1.1",
     "less": "^4.2.0",
     "lodash.debounce": "^4.0.8",
-    "vite": "^4.3.9",
-    "vitest": "^0.34.1",
-    "vite-plugin-vue-setup-extend": "^0.4.0",
     "mockjs": "^1.1.0",
-    "terser": "5.19.2"
+    "terser": "5.19.2",
+    "vite": "^4.3.9",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vitest": "^0.34.1"
   },
   "description": "> 基于`element-ui`和`vue-virtual-scroller`的全量级联树选择器，结合虚拟列表逐级渲染，支持全选，在较大数据量上也有较高的性能",
   "directories": {

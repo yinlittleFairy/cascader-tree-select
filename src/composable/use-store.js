@@ -1,20 +1,14 @@
 import { ref } from 'vue'
 import { MenuStore, emitsEnum } from './menu-store.js'
 import debounce from 'lodash.debounce'
-export const useStore = ({
-  options = [],
-  cascaderMaxLevel = 2,
-  needResultPanel = true,
-  resultLabelJoiner = ' > '
-}, emit) => {
+export const useStore = ({ cascaderMaxLevel = 2, needResultPanel = true, resultLabelJoiner = ' > ', options = [] }, emit) => {
   const menuStore = ref(null)
   const resultStore = ref(null)
-  const formatOptions = ref(null)
 
-  const initMenuStore = (value = []) => {
+  const initMenuStore = (value = [], menuOptions = options) => {
     let _edit = []
     if (value.length) _edit = value?.map(it => it.join(','))
-    menuStore.value = new MenuStore(options, _edit, cascaderMaxLevel)
+    menuStore.value = new MenuStore(menuOptions, _edit, cascaderMaxLevel)
     const debouncedListenCheckedFun = debounce((result) => {
       let _result = []
       for (let [, node] of result) {
@@ -30,7 +24,6 @@ export const useStore = ({
       menuStore.value.listenChange(emitsEnum.resultChange, debouncedListenResFun)
       initResultStore(menuStore.value.result)
     }
-    formatOptions.value = menuStore.value.getNodesTree()
   }
   const initResultStore = (result) => {
     let _result = []
@@ -41,11 +34,12 @@ export const useStore = ({
     }
     const getLeafNodes = (node) => {
       return node.reduce((prev, cur) => {
-        return [...prev, ...cur.findLeafs().map(it => ({
-          ...it,
-          value: it.path.join(','),
-          label: it.pathName.join(resultLabelJoiner)
-        }))]
+        return cur.leaf
+          ? [...prev, {
+            ...cur,
+            value: cur.path.join(','),
+            label: cur.pathName.join(resultLabelJoiner),
+          }] : [...prev, ...getLeafNodes(cur.children)]
       }, [])
     }
     resultStore.value = new MenuStore(getLeafNodes(_result))
@@ -70,8 +64,8 @@ export const useStore = ({
   }
 
   return {
-    formatOptions,
     resultStore,
+    menuStore,
     initMenuStore,
     handleDestroyed,
     removeSelectedCate,

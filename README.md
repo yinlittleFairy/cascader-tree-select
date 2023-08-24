@@ -25,6 +25,7 @@ yarn add cascader-tree-select
 
 ```javascript
 import CascaderTreeSelect from 'cascader-tree-select'
+import 'cascader-tree-select/src/style.less';
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(CascaderTreeSelect)

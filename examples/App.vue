@@ -4,7 +4,7 @@
     <div class="cascader-tree-select__demo__module">
       <cascader-tree-select
         :panelTitleList="['一级标题', '二级标题', '三级标题', '四级标题']"
-        :options="_mock.array"
+        :options="cateOptions"
         :needSearch="propModel.needSearch"
         :cascaderMaxLevel="propModel.cascaderMaxLevel"
         :needResultPanel="propModel.needResultPanel"
@@ -25,7 +25,7 @@ import CascaderTreeSelect from '../src/index.vue'
 import PropForm from './prop-form.vue'
 import Mock from 'mockjs'
 import 'element-ui/lib/theme-chalk/index.css'
-import { reactive, ref, watch } from 'vue'
+import { onMounted, reactive, ref, watch } from 'vue'
 
 const cascaderTreeSelectRef = ref(null)
 const propModel = reactive({
@@ -33,26 +33,32 @@ const propModel = reactive({
   needResultPanel: true,
   ancestorHitShow: true
 })
+const cateOptions = ref([])
 
-const _mock = Mock.mock({
-  'array|100': [
-    {
-      label: '@csentence(6)',
-      value: '@increment()',
-      'children|10': [
+onMounted(() => {
+  setTimeout(() => {
+    const _mock = Mock.mock({
+      'array|100': [
         {
           label: '@csentence(6)',
           value: '@increment()',
           'children|10': [
             {
               label: '@csentence(6)',
-              value: '@increment()'
+              value: '@increment()',
+              'children|10': [
+                {
+                  label: '@csentence(6)',
+                  value: '@increment()'
+                }
+              ]
             }
           ]
         }
       ]
-    }
-  ]
+    })
+    cateOptions.value = _mock.array
+  })
 })
 
 const resultValue = ref([])
@@ -64,6 +70,7 @@ const handleChange = (result) => {
 watch(() => propModel, () => {
   cascaderTreeSelectRef.value?.initMenuStore([])
 }, { deep: true })
+
 </script>
 
 <style lang="less" scoped>
