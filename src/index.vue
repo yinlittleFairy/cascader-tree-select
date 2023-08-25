@@ -15,6 +15,7 @@
         :cascader-max-level="props.cascaderMaxLevel"
         :global-search-word="searchKey"
         :panel-title-list="props.panelTitleList"
+        v-bind="$props"
         ref="cascaderSelectRef"
       ></cascader-select>
       <cascader-result

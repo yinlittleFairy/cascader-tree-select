@@ -33,7 +33,7 @@
           :item-size="32"
           key-field="value"
           :buffer="100"
-          :style="{ height: isResultPanel && showResultSearch ? '289px' : '325px' }"
+          :style="{ height: isResultPanel && showResultSearch ? '296px' : '325px' }"
         >
           <div class="cascader-panel__menu__item">
             <el-checkbox
@@ -45,7 +45,7 @@
             <div
               :title="item.label"
               class="menu-item"
-              :class="{'menu-item__danger' : props.colorDangerField && item[props.colorDangerField], 'menu-item__active': panelActiveList[props.curPanelLevel] && item.value === panelActiveList[props.curPanelLevel].value}"
+              :class="{'menu-item__danger' : item.colorDangerField, 'menu-item__active': panelActiveList[props.curPanelLevel] && item.value === panelActiveList[props.curPanelLevel].value}"
               v-html="highLightLabel(item.label)"
               @click="emit('clickMenuItem', item)"
             ></div>
@@ -111,10 +111,6 @@ const props = defineProps({
     default: () => ([])
   },
   globalSearchWord: {
-    type: String,
-    default: ''
-  },
-  colorDangerField: {
     type: String,
     default: ''
   }

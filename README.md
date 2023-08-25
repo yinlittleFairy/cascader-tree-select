@@ -90,22 +90,23 @@ Vue.use(CascaderTreeSelect)
 
 ## node字段
 
-| 字段名称  | 说明                      | 类型      | 可选值        | 默认值   |
-|-------|-------------------------|---------|------------|-------|
-| uid   | 随机id                    | string  | -          | -     |
-| label | 当前节点的名称                 | string  | -          | -     |
-| value | 当前节点的值                  | string  | -          | -     |
-| level | 当前节点的层级                 | number  | -          | -     |
-| leaf  | 是否是叶节点                  | boolean | true/false | false |
-| disabled  | 是否被禁用                   | boolean | true/false | false |
-| parent  | 当前节点的父节点                | -       | -          | -     |
-| children  | 当前节点的子节点                | -       | -          | -     |
+| 字段名称  | 说明             | 类型      | 可选值        | 默认值   |
+|-------|----------|---------|------------|-------|
+| uid   | 随机id   | string  | -          | -     |
+| label | 当前节点的名称   | string  | -          | -     |
+| value | 当前节点的值    | string  | -          | -     |
+| level | 当前节点的层级   | number  | -          | -     |
+| leaf  | 是否是叶节点    | boolean | true/false | false |
+| disabled  | 是否被禁用     | boolean | true/false | false |
+| parent  | 当前节点的父节点  | -       | -          | -     |
+| children  | 当前节点的子节点  | -       | -          | -     |
 | path  | 当前节点所在的各级菜单的value所组成的数组 | array   | -          | -     |
 | pathName  | 当前节点所在的各级菜单的label所组成的数组 | array   | -          | -     |
-| leafNodesNum  | 当前节点的子节点数量              | number  | -          | -     |
-| checked  | 当前节点是否被选中               | boolean | true/false | false |
-| indeterminate  | 当前节点是否有部门子节点被选中         | boolean | true/false | false |
-| menuNodeShow  | 当前节点是否展示                | boolean | true/false | true  |
+| leafNodesNum  | 当前节点的子节点数量 | number  | -          | -     |
+| checked  | 当前节点是否被选中 | boolean | true/false | false |
+| indeterminate  | 当前节点是否有部门子节点被选中 | boolean | true/false | false |
+| menuNodeShow  | 当前节点是否展示  | boolean | true/false | true  |
+| colorDangerField  | 该字段值存在，节点标红 | string  | - | - |
 
 ## events
 
@@ -115,6 +116,6 @@ Vue.use(CascaderTreeSelect)
 
 ## Methods
 
-| 方法名称   | 说明      | 参数   |
-|--------|---------|------|
-| initMenuStore | 重置到初始状态 | 已选中值 |
+| 方法名称   | 说明      | 参数         |
+|--------|---------|------------|
+| initMenuStore | 重置到初始状态 | 可选数据源，已选中值 |

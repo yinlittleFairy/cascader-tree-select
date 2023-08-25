@@ -26,7 +26,7 @@ class MenuNode {
     this.leafNodesNum = 0
     this.checked = checked
     this.indeterminate = indeterminate
-    this.sensitiveFlag = data.sensitiveFlag
+    this.colorDangerField = data.colorDangerField
     this.menuNodeShow = true
   }
 

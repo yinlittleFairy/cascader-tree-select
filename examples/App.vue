@@ -48,7 +48,8 @@ onMounted(() => {
             'children|10': [
               {
                 label: '@csentence(6)',
-                value: '@increment()'
+                value: '@increment()',
+                colorDangerField: 1
               }
             ]
           }

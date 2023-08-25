@@ -1,8 +1,8 @@
 {
-  "name": "cascader-tree-select",
+  "name": "@bigdata-fe/cascader-tree-select",
   "main": "lib/cascader-tree-select.umd.js",
   "module": "lib/cascader-tree-select.es.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",

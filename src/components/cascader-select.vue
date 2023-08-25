@@ -9,6 +9,7 @@
       :panel-menu-title="panelTitleList[level - 1]"
       :panel-active-list="panelActiveNode"
       :global-search-word="globalSearchWord"
+      v-bind="$attrs"
       @clickMenuItem="convertActive"
     ></cascader-panel>
   </div>
