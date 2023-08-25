@@ -1,3 +1,16 @@
+<p align="center">
+    <h3 align="center">cascader-tree-select</h3>
+    <br>
+    <p align="center">
+        <a href="https://www.npmjs.com/package/cascader-tree-select"><img src="https://img.shields.io/npm/v/cascader-tree-select?maxAge=2592000"></a>
+        <a href="https://www.npmjs.com/package/@vueblocks/elp-cascader"><img src="https://img.shields.io/npm/dt/cascader-tree-select"></a>
+        <a href="https://github.com/vueblocks/elp-cascader/stargazers"><img src="https://img.shields.io/github/stars/yinlittlefairy/cascader-tree-select.svg"></a>
+    </p>
+    <p align="center">
+        cascader-tree-select based on element-ui，vite and vue-virtual-scroller, combined with virtual list rendering level by level, supports full selection, and has high performance in large data volumes。
+    </p>
+</p>
+
 # cascader-tree-select
 
 > 基于`element-ui`和`vue-virtual-scroller`的全量级联树选择器，结合虚拟列表逐级渲染，支持全选，在较大数据量上也有较高的性能
@@ -21,7 +34,7 @@ npm i cascader-tree-select --save
 yarn add cascader-tree-select
 ```
 
-## 在main.js中引入
+## 在main.js中引入, vue版本应在2.7以上
 
 ```javascript
 import CascaderTreeSelect from 'cascader-tree-select'
