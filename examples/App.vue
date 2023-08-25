@@ -68,6 +68,7 @@ const handleChange = (result) => {
 
 watch(() => propModel, () => {
   cascaderTreeSelectRef.value?.initMenuStore(cateOptions.value, [])
+  resultValue.value = []
 }, { deep: true })
 
 </script>
