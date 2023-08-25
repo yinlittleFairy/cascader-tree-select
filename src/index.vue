@@ -89,12 +89,12 @@ const { menuStore, initMenuStore, resultStore, handleDestroyed, removeSelectedCa
 const { handleSearch } = useSearch(cascaderSelectRef)
 
 watch(() => searchKey.value, () => {
-  handleSearch( menuStore.getNodesTree(), searchKey.value, props.ancestorHitShow)
+  handleSearch(menuStore.value?.getNodesTree() || [], searchKey.value, props.ancestorHitShow)
 })
 
 watch(() => props.options, (val) => {
-  initMenuStore(props.value, val)
-}, { immediate: true, deep: true })
+  initMenuStore(val, props.value)
+}, { deep: true })
 
 onUnmounted(() => {
   handleDestroyed()

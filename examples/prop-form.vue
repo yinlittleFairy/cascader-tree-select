@@ -14,7 +14,7 @@
           <el-radio :label="false">false</el-radio>
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="ancestorHitShow(当前节点命中，子节点无论命中与否全部展示)：">
+      <el-form-item label="ancestorHitShow(搜索时如果当前节点命中，子节点无论命中与否全部展示)：">
         <el-radio-group v-model="model.ancestorHitShow">
           <el-radio :label="true">true</el-radio>
           <el-radio :label="false">false(如果节点本身命中，但子节点无一命中，则当前节点不展示)</el-radio>

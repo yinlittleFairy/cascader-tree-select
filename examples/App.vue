@@ -36,29 +36,27 @@ const propModel = reactive({
 const cateOptions = ref([])
 
 onMounted(() => {
-  setTimeout(() => {
-    const _mock = Mock.mock({
-      'array|100': [
-        {
-          label: '@csentence(6)',
-          value: '@increment()',
-          'children|10': [
-            {
-              label: '@csentence(6)',
-              value: '@increment()',
-              'children|10': [
-                {
-                  label: '@csentence(6)',
-                  value: '@increment()'
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    })
-    cateOptions.value = _mock.array
+  const _mock = Mock.mock({
+    'array|100': [
+      {
+        label: '@csentence(6)',
+        value: '@increment()',
+        'children|10': [
+          {
+            label: '@csentence(6)',
+            value: '@increment()',
+            'children|10': [
+              {
+                label: '@csentence(6)',
+                value: '@increment()'
+              }
+            ]
+          }
+        ]
+      }
+    ]
   })
+  cateOptions.value = _mock.array
 })
 
 const resultValue = ref([])
@@ -68,7 +66,7 @@ const handleChange = (result) => {
 }
 
 watch(() => propModel, () => {
-  cascaderTreeSelectRef.value?.initMenuStore([])
+  cascaderTreeSelectRef.value?.initMenuStore(cateOptions.value, [])
 }, { deep: true })
 
 </script>

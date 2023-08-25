@@ -1,11 +1,11 @@
 import { ref } from 'vue'
 import { MenuStore, emitsEnum } from './menu-store.js'
 import debounce from 'lodash.debounce'
-export const useStore = ({ cascaderMaxLevel = 2, needResultPanel = true, resultLabelJoiner = ' > ', options = [] }, emit) => {
+export const useStore = ({ cascaderMaxLevel = 2, needResultPanel = true, resultLabelJoiner = ' > ' }, emit) => {
   const menuStore = ref(null)
   const resultStore = ref(null)
 
-  const initMenuStore = (value = [], menuOptions = options) => {
+  const initMenuStore = (menuOptions = [], value = []) => {
     let _edit = []
     if (value.length) _edit = value?.map(it => it.join(','))
     menuStore.value = new MenuStore(menuOptions, _edit, cascaderMaxLevel)

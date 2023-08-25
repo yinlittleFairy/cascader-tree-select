@@ -117,7 +117,7 @@ class MenuNode {
     this.changeCheckVal(val)
     this.changeChildStatus(val)
     this.changeParentStatus(val)
-    // if (typeof this.store?.onNodeChange === 'function') this.store.onNodeChange(this)
+    if (typeof this.store?.onNodeChange === 'function') this.store.onNodeChange(this)
   }
 
   changeChildStatus (val) {
