@@ -3,8 +3,8 @@
     <br>
     <p align="center">
         <a href="https://www.npmjs.com/package/cascader-tree-select"><img src="https://img.shields.io/npm/v/cascader-tree-select?maxAge=2592000"></a>
-        <a href="https://www.npmjs.com/package/@vueblocks/elp-cascader"><img src="https://img.shields.io/npm/dt/cascader-tree-select"></a>
-        <a href="https://github.com/vueblocks/elp-cascader/stargazers"><img src="https://img.shields.io/github/stars/yinlittlefairy/cascader-tree-select.svg"></a>
+        <a href="https://www.npmjs.com/package/cascader-tree-select"><img src="https://img.shields.io/npm/dt/cascader-tree-select"></a>
+        <a href="https://github.com/yinlittleFairy/cascader-tree-select/stargazers"><img src="https://img.shields.io/github/stars/yinlittlefairy/cascader-tree-select.svg"></a>
     </p>
     <p align="center">
         cascader-tree-select based on element-ui，vite and vue-virtual-scroller, combined with virtual list rendering level by level, supports full selection, and has high performance in large data volumes。
