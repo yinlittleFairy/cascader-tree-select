@@ -250,7 +250,8 @@ export class MenuStore {
     return res
   }
   onCancelCheck (item) {
-    if (!item.path) return
+    let { path, leafNodesNum, children } = item
+    if (!path) return
     const loopDel = (node) => {
       if (!node.parent) return
       const siblings = node.findSiblings()
@@ -271,10 +272,22 @@ export class MenuStore {
       }
     }
     loopDel(item)
-
     this.delKeysFromResult([item.path.join(spliter)])
-    const childKeys = this.getChildKeysFromResult(item.path)
-    this.delKeysFromResult(childKeys)
+
+    let _allShowLeafs = item.findLeafs(true) || []
+    let _isAllLeafsShow = _allShowLeafs.length === leafNodesNum
+    // 如果有搜索词，取消选中时，仅取消menuNodeShow是true的，并将menuNodeShow是false的加入result中
+    if (!_isAllLeafsShow) {
+      const loop = (list) => {
+        if (!list) return
+        for (let item of list) {
+          if (!item.menuNodeShow) {
+            if (item.checked) this.insetKeyInResult(item.path, item)
+          } else loop(item?.children)
+        }
+      }
+      loop(children)
+    }
   }
 
   initLists (options = [], editVal, cascaderMaxLevel) {
