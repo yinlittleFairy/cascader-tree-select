@@ -9,9 +9,12 @@ export const useSearch = (cascaderSelectRef = null) => {
      }
    }
    updateShowStatus(formatOptions)
+   
    formatOptions.forEach(item => {
-     let _allCheckedLeafs = item.findLeafs(true)?.filter(it => it.checked)
-     _allCheckedLeafs.forEach(it => { it.onCheckedClick(true) })
+     let _allCheckedLeafs = item.findLeafs(true)
+     for (let it of _allCheckedLeafs) {
+       it.onCheckedClick(it.checked)
+     }
    })
    nextTick(() => {
      let _options = formatOptions.filter(it => !!it.menuNodeShow)
