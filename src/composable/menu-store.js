@@ -274,6 +274,9 @@ export class MenuStore {
     loopDel(item)
     this.delKeysFromResult([item.path.join(spliter)])
 
+    const childKeys = this.getChildKeysFromResult(item.path)
+    this.delKeysFromResult(childKeys)
+
     let _allShowLeafs = item.findLeafs(true) || []
     let _isAllLeafsShow = _allShowLeafs.length === leafNodesNum
     // 如果有搜索词，取消选中时，仅取消menuNodeShow是true的，并将menuNodeShow是false的加入result中
